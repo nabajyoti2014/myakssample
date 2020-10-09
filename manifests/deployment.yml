@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "nbaks009-a2b0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "nbaks009-a2b0"
+  template:
+    metadata:
+      labels:
+        app: "nbaks009-a2b0"
+    spec:
+      containers:
+        - name: "nbaks009-a2b0"
+          image: "myacrnb005.azurecr.io/nbaks009"
+          ports:
+          - containerPort: 5000
